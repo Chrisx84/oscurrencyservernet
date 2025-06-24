@@ -281,8 +281,7 @@ internal class MoneyServerBase : BaseOpenSimServer, IMoneyServiceCore
 
     public void ReadIniConfig()
     {
-        MoneyServerConfigSource moneyConfig = new MoneyServerConfigSource();
-        moneyConfig.args = args;
+        MoneyServerConfigSource moneyConfig = new MoneyServerConfigSource(args);
         Config = moneyConfig.m_config;
 
         try
@@ -452,9 +451,8 @@ internal class MoneyServerBase : BaseOpenSimServer, IMoneyServiceCore
     {
 
         public IniConfigSource m_config;
-        public string[] args;
 
-        public MoneyServerConfigSource()
+        public MoneyServerConfigSource(string[] args)
         {
             bool isFound = false;
             foreach (string arg in args)
