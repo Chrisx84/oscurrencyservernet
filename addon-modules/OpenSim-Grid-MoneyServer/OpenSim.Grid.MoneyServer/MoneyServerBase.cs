@@ -138,12 +138,12 @@ internal class MoneyServerBase : BaseOpenSimServer, IMoneyServiceCore
 
     IConfig m_server_config;
     IConfig m_cert_config;
-    string[] cargs;
+    
+    public string[] args;
 
 
-    public MoneyServerBase(string[] args)
+    public MoneyServerBase()
     {
-        cargs = args;
         try
         {
             // Initialize the console for the Money Server
@@ -281,7 +281,7 @@ internal class MoneyServerBase : BaseOpenSimServer, IMoneyServiceCore
 
     public void ReadIniConfig()
     {
-        MoneyServerConfigSource moneyConfig = new MoneyServerConfigSource(cargs);
+        MoneyServerConfigSource moneyConfig = new MoneyServerConfigSource(args);
         Config = moneyConfig.m_config;
 
         try
@@ -464,10 +464,6 @@ internal class MoneyServerBase : BaseOpenSimServer, IMoneyServiceCore
                     {
                         m_config = new IniConfigSource(path);
                         isFound = true;
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Config file not found: {path}");
                     }
                     break;
                 }

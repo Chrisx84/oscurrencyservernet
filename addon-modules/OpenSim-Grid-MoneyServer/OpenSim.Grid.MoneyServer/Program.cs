@@ -53,9 +53,10 @@ namespace OpenSim.Grid.MoneyServer
             try
             {
                 XmlConfigurator.Configure();
-                MoneyServerBase app = new MoneyServerBase(args);
+                MoneyServerBase app = new MoneyServerBase();
                 if (app != null)
                 {
+                    app.args = args;
                     app.Startup();
                     app.Work();
                 }
