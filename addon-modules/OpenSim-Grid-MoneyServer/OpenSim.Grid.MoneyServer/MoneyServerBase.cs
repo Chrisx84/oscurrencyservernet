@@ -454,7 +454,7 @@ internal class MoneyServerBase : BaseOpenSimServer, IMoneyServiceCore
 
         public MoneyServerConfigSource(string[] args)
         {
-            string result = String.Join(" ", args);
+            string result = string.Join(" ", args);
             if (result.Contains("-inifile=")) {
                 string[] location = result.Split("=");
                 if (File.Exists(location[0])) {
