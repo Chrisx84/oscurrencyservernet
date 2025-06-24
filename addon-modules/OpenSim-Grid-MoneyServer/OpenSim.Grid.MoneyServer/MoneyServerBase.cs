@@ -463,7 +463,7 @@ internal class MoneyServerBase : BaseOpenSimServer, IMoneyServiceCore
             {
                 if (arg.StartsWith("-inifile="))
                 {
-                    string path = arg.Substring(0, "-inifile=".Length);
+                    string path = arg.Substring("-inifile=".Length);
                     if (File.Exists(path))
                     {
                         m_config = new IniConfigSource(path);
