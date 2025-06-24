@@ -454,26 +454,21 @@ internal class MoneyServerBase : BaseOpenSimServer, IMoneyServiceCore
 
         public MoneyServerConfigSource(string[] args)
         {
-            bool isFound = false;
+            string configPath = Path.Combine(Directory.GetCurrentDirectory(), "MoneyServer.ini");
+            if (File.Exists(configPath))
+            {
+                m_config = new IniConfigSource(configPath);
+            }
             foreach (string arg in args)
             {
                 if (arg.StartsWith("-inifile="))
                 {
-                    string path = arg.Substring("-inifile=".Length);
+                    string path = arg.Substring(0, "-inifile=".Length);
                     if (File.Exists(path))
                     {
                         m_config = new IniConfigSource(path);
-                        isFound = true;
                     }
                     break;
-                }
-            }
-
-            if (!isFound) {
-                string configPath = Path.Combine(Directory.GetCurrentDirectory(), "MoneyServer.ini");
-                if (File.Exists(configPath))
-                {
-                    m_config = new IniConfigSource(configPath);
                 }
             }
         }
