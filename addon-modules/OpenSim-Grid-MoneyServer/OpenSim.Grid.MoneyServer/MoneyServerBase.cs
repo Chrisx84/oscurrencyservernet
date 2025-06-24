@@ -456,7 +456,7 @@ internal class MoneyServerBase : BaseOpenSimServer, IMoneyServiceCore
         {
             ArgvConfigSource configSource = new ArgvConfigSource(args);
             if (configSource != null) {
-                m_config = configSource;
+                m_config = IniConfigSource(configSource);
             }else{
                 string configPath = Path.Combine(Directory.GetCurrentDirectory(), "MoneyServer.ini");
                 if (File.Exists(configPath))
