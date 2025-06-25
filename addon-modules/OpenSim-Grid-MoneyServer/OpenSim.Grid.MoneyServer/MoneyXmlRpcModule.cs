@@ -289,8 +289,7 @@ namespace OpenSim.Grid.MoneyServer
 
             m_forceTransfer = m_server_config.GetBoolean("EnableForceTransfer", m_forceTransfer);
 
-            string banker = m_server_config.GetString("BankerAvatar", m_bankerAvatar);
-            m_bankerAvatar = banker.ToLower();
+            m_bankerAvatar = m_server_config.GetString("BankerAvatar", m_bankerAvatar);
 
             m_enableAmountZero = m_server_config.GetBoolean("EnableAmountZero", m_enableAmountZero);
             m_scriptSendMoney = m_server_config.GetBoolean("EnableScriptSendMoney", m_scriptSendMoney);
@@ -1082,7 +1081,7 @@ namespace OpenSim.Grid.MoneyServer
             int rate = 100; // 1 = 100L$
             return new Hashtable
             {
-                { "success", true },
+                { "success", false },
                 { "currency", new Hashtable
                     {
                         { "estimatedCost", currencyBuy / rate }, // Kosten in 
@@ -1148,7 +1147,7 @@ namespace OpenSim.Grid.MoneyServer
 
             Hashtable quoteResponse = new Hashtable
             {
-                { "success", true },
+                { "success", false },
                 { "currency", currencyResponse },
                 { "confirm", Guid.NewGuid().ToString() }
             };
@@ -1191,10 +1190,10 @@ namespace OpenSim.Grid.MoneyServer
                 m_log.InfoFormat("[MONEY XMLRPC]: handlePayMoneyCharge: Transferring money from {0} to {1}, Amount = {2}", senderID, receiverID, amount);
 
                 // Führe die tatsächliche Transaktion durch, indem die handlePayMoneyCharge-Methode aufgerufen wird
-                XmlRpcResponse transferResponse = handlePayMoneyCharge(request, remoteClient); // Übergibt die Anfrage an die tatsächliche Überweisungsmethode
+                //XmlRpcResponse transferResponse = handlePayMoneyCharge(request, remoteClient); // Übergibt die Anfrage an die tatsächliche Überweisungsmethode
 
                 // Überprüfe, ob die Antwort erfolgreich war
-                if (transferResponse != null && transferResponse.Value is Hashtable transferResult &&
+                /*if (transferResponse != null && transferResponse.Value is Hashtable transferResult &&
                     transferResult.ContainsKey("success") && (bool)transferResult["success"])
                 {
                     // Wenn die Transaktion erfolgreich war, setze die Antwortdaten
@@ -1202,10 +1201,10 @@ namespace OpenSim.Grid.MoneyServer
                     responseData["message"] = $"Successfully purchased {amount} currency for AgentId {agentId}";
                 }
                 else
-                {
+                {*/
                     // Fehler bei der Überweisung
                     responseData["message"] = "Currency purchase failed during money transfer.";
-                }
+                //}
             }
             catch (Exception ex)
             {
