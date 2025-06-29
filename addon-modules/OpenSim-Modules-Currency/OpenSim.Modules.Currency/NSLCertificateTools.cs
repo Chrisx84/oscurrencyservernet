@@ -50,7 +50,7 @@ using System.IO;
 using System.Net;
 using System.Net.Security;
 using System.Reflection;
-using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates2;
 
 using log4net;
 
@@ -117,7 +117,7 @@ namespace NSL.Certificate.Tools
         {
             try
             {
-                m_mycert = X509Certificate2.CreateFromPkcs12(File.ReadAllBytes(certfile), passwd);
+                m_mycert = X509Certificate2.LoadCertificate(certfile, passwd);
             }
             catch (Exception ex)
             {
@@ -145,7 +145,7 @@ namespace NSL.Certificate.Tools
         {
             try
             {
-                m_cacert = X509Certificate2.CreateFromPkcs12(File.ReadAllBytes(certfile));
+                m_cacert = X509Certificate2.LoadCertificate(certfile);
             }
             catch (Exception ex)
             {
@@ -270,7 +270,7 @@ namespace NSL.Certificate.Tools
                 return false;
             }
 
-            var certificate2 = X509Certificate2.CreateFromPkcs12(certificate);
+            var certificate2 = X509Certificate2.LoadCertificate(certificate);
             string commonname = certificate2.GetNameInfo(X509NameType.SimpleName, false);
             m_log.InfoFormat("[NSL CLIENT CERT VERIFY]: ValidateClientCertificate: Common Name is \"{0}\"", commonname);
 
