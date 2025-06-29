@@ -65,8 +65,8 @@ namespace NSL.Certificate.Tools
         private static readonly ILog m_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         private X509Chain m_chain = null;
-        private X509CertificateLoader m_cacert = null;
-        private X509CertificateLoader m_mycert = null;
+        private X509Certificate2 m_cacert = null;
+        private X509Certificate2 m_mycert = null;
 
         private Mono.Security.X509.X509Crl m_clientcrl = null;
 
@@ -130,7 +130,7 @@ namespace NSL.Certificate.Tools
         /// <summary>
         /// Get Private Certificate
         /// </summary>
-        public X509CertificateLoader GetPrivateCert()
+        public X509Certificate2 GetPrivateCert()
         {
             return m_mycert;
         }
@@ -183,14 +183,14 @@ namespace NSL.Certificate.Tools
         /// </summary>
         /// <param name="cert"></param>
         /// <returns></returns>
-        public bool CheckPrivateChain(X509CertificateLoader cert)
+        public bool CheckPrivateChain(X509Certificate2 cert)
         {
             if (m_chain == null || m_cacert == null)
             {
                 return false;
             }
 
-            bool ret = m_chain.Build((X509CertificateLoader)cert);
+            bool ret = m_chain.Build((X509Certificate2)cert);
             if (ret)
             {
                 return true;
@@ -228,7 +228,7 @@ namespace NSL.Certificate.Tools
                 }
             }
 
-            X509CertificateLoader certificate2 = new X509CertificateLoader(certificate);
+            X509Certificate2 certificate2 = new X509Certificate2(certificate);
             string commonname = certificate2.GetNameInfo(X509NameType.SimpleName, false);
             m_log.InfoFormat("[NSL SERVER CERT VERIFY]: ValidateServerCertificate: Common Name is \"{0}\"", commonname);
 
