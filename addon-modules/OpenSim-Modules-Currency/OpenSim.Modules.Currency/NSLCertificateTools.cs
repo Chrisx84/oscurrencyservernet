@@ -116,7 +116,7 @@ namespace NSL.Certificate.Tools
         {
             try
             {
-                m_mycert = new X509Certificate2(certfile, passwd);
+                m_mycert = X509Certificate2.CreateFromPkcs12(File.ReadAllBytes(certfile), passwd);
             }
             catch (Exception ex)
             {
@@ -144,7 +144,7 @@ namespace NSL.Certificate.Tools
         {
             try
             {
-                m_cacert = new X509Certificate2(certfile);
+                m_cacert = X509Certificate2.CreateFromDer(File.ReadAllBytes(certfile));
             }
             catch (Exception ex)
             {
@@ -269,7 +269,7 @@ namespace NSL.Certificate.Tools
                 return false;
             }
 
-            X509Certificate2 certificate2 = new X509Certificate2(certificate);
+            var certificate2 = X509Certificate2.CreateFromDer(certificate);
             string commonname = certificate2.GetNameInfo(X509NameType.SimpleName, false);
             m_log.InfoFormat("[NSL CLIENT CERT VERIFY]: ValidateClientCertificate: Common Name is \"{0}\"", commonname);
 
