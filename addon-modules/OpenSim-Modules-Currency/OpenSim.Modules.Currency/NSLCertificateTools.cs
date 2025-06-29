@@ -117,7 +117,8 @@ namespace NSL.Certificate.Tools
         {
             try
             {
-                m_mycert = X509CertificateLoader.LoadPkcs12FromFile(certfile, passwd);
+                //m_mycert = X509CertificateLoader.LoadPkcs12FromFile(certfile, passwd);
+                m_mycert = new X509Certificate2(certfile, passwd);
             }
             catch (Exception ex)
             {
@@ -168,7 +169,7 @@ namespace NSL.Certificate.Tools
         {
             try
             {
-                m_clientcrl = Mono.Security.X509.X509Crl.CreateFromFile(crlfile);
+                m_clientcrl = new X509Certificate2(crlfile);
             }
             catch (Exception ex)
             {
