@@ -270,7 +270,7 @@ namespace NSL.Certificate.Tools
                 return false;
             }
 
-            X509Certificate certificate2 = X509CertificateLoader.LoadPkcs12(certificate, "");
+            X509Certificate2 certificate2 = X509CertificateLoader.LoadPkcs12(File.ReadAllBytes(certificate), "");
             string commonname = certificate2.GetNameInfo(X509NameType.SimpleName, false);
             m_log.InfoFormat("[NSL CLIENT CERT VERIFY]: ValidateClientCertificate: Common Name is \"{0}\"", commonname);
 
