@@ -50,7 +50,7 @@ using System.IO;
 using System.Net;
 using System.Net.Security;
 using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
+using System.Security.Cryptography.X509Certificates2;
 
 using log4net;
 
