@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\OpenSim\Region\Application\OpenSim.csproj" />
+    <ProjectReference Include="..\..\OpenSim\Region\Framework\OpenSim.Region.Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Addins">
+      <HintPath>..\..\bin\Mono.Addins.dll</HintPath>
+    </Reference>
+    <Reference Include="Nini">
+      <HintPath>..\..\bin\Nini.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenMetaverse">
+      <HintPath>..\..\bin\OpenMetaverse.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenMetaverse.StructuredData">
+      <HintPath>..\..\bin\OpenMetaverse.StructuredData.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenMetaverseTypes">
+      <HintPath>..\..\bin\OpenMetaverseTypes.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
