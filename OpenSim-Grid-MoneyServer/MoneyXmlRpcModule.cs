@@ -104,11 +104,10 @@ Das Modul ist für produktiven Einsatz gut vorbereitet. Zusätzliche defensive C
  */
 
 using log4net;
-using MySql.Data.MySqlClient;
 using Nini.Config;
+using Nwc.XmlRpc;
 using NSL.Certificate.Tools;
 using NSL.Network.XmlRpc;
-using Nwc.XmlRpc;
 using OpenMetaverse;
 using OpenSim.Data.MySQL.MySQLMoneyDataWrapper;
 using OpenSim.Framework;
@@ -116,22 +115,14 @@ using OpenSim.Framework.Servers.HttpServer;
 using OpenSim.Modules.Currency;
 using OpenSim.Region.Framework.Scenes;
 using OpenSim.Services.Interfaces;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Transactions;
 using System.Xml;
-using static Mono.Security.X509.X520;
-using static OpenMetaverse.DllmapConfigHelper;
-using OpenSim.Server.Base;
-using OpenSim.Framework.Console;
+using MySql.Data.MySqlClient;
 
 
 namespace OpenSim.Grid.MoneyServer
@@ -710,9 +701,9 @@ namespace OpenSim.Grid.MoneyServer
                 bool purchaseSuccessful = ProcessLandPurchase(agentId, secureSessionId, billableArea, currencyBuy);
                 XmlRpcResponse response = new XmlRpcResponse();
                 Hashtable responseValue = new Hashtable
-        {
-            { "success", purchaseSuccessful }
-        };
+                {
+                    { "success", purchaseSuccessful }
+                };
                 response.Value = responseValue;
                 return response;
             }

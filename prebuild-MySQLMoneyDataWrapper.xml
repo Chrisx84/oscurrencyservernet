@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-    <Project name="OpenSim.Data.MySQL.MySQLMoneyDataWrapper" path="addon-modules/OpenSim-Data-MySQL-MySQLMoneyDataWrapper" type="Library">
+    <Project name="OpenSim.Data.MySQL.MySQLMoneyDataWrapper" path="addon-modules/oscurrencyservernet/OpenSim-Data-MySQL-MySQLMoneyDataWrapper" type="Library">
       <Configuration name="Debug">
         <Options>
           <OutputPath>../../bin/</OutputPath>

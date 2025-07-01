@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-    <Project name="OpenSim.Modules.Currency" path="addon-modules/OpenSim-Modules-Currency" type="Library">
+    <Project name="OpenSim.Modules.Currency" path="addon-modules/oscurrencyservernet/OpenSim-Modules-Currency" type="Library">
       <Configuration name="Debug">
         <Options>
           <OutputPath>../../bin/</OutputPath>
