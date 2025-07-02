@@ -186,7 +186,7 @@ namespace OpenSim.Grid.MoneyServer
         // SSL settings
         private string m_sslCommonName = "";
 
-        private Dictionary<ulong, Scene> m_scenes = new Dictionary<ulong, Scene>();
+        private System.Collections.Generic.Dictionary<ulong, Scene> m_scenes = new System.Collections.Generic.Dictionary<ulong, Scene>();
 
         private NSLCertificateVerify m_certVerify = new NSLCertificateVerify();
 
@@ -390,7 +390,7 @@ namespace OpenSim.Grid.MoneyServer
         {
         }
 
-        private Dictionary<string, XmlRpcMethod> m_rpcHandlers = new Dictionary<string, XmlRpcMethod>();
+        private System.Collections.Generic.Dictionary<string, XmlRpcMethod> m_rpcHandlers = new System.Collections.Generic.Dictionary<string, XmlRpcMethod>();
 
 
         /// <summary>Registers the handlers.</summary>
@@ -1398,7 +1398,7 @@ namespace OpenSim.Grid.MoneyServer
             return Regex.IsMatch(email, pattern, RegexOptions.Compiled);
         }
 
-        private Dictionary<UUID, int> balances = new Dictionary<UUID, int>();
+        private System.Collections.Generic.Dictionary<UUID, int> balances = new System.Collections.Generic.Dictionary<UUID, int>();
 
         public int GetBalance(UUID uuid)
         {
