@@ -2,18 +2,18 @@
     <Project name="OpenSim.Data.MySQL.MySQLMoneyDataWrapper" path="addon-modules/oscurrencyservernet/OpenSim-Data-MySQL-MySQLMoneyDataWrapper" type="Library">
       <Configuration name="Debug">
         <Options>
-          <OutputPath>../../../../bin/</OutputPath>
+          <OutputPath>../../../bin/</OutputPath>
           <AllowUnsafe>true</AllowUnsafe>
         </Options>
       </Configuration>
       <Configuration name="Release">
         <Options>
-          <OutputPath>../../../../bin/</OutputPath>
+          <OutputPath>../../../bin/</OutputPath>
           <AllowUnsafe>true</AllowUnsafe>
         </Options>
       </Configuration>
 	  
-      <ReferencePath>../../../../bin/</ReferencePath>
+      <ReferencePath>../../../bin/</ReferencePath>
       <Reference name="Mono.Security.dll"/>
       <Reference name="Nini"/>      
       <Reference name="log4net"/>
@@ -33,7 +33,7 @@
       <Reference name="OpenSim.Data"/>
       <Reference name="OpenSim.Data.MySQL.MySQLMoneyDataWrapper"/>
       <Reference name="OpenSim.Modules.Currency"/>
-      <Reference name="Mono.Addins" path ="../../../../bin"/>
+      <Reference name="Mono.Addins" path ="../../../bin/"/>
       <Reference name="Mono.Addins.Setup"/>
 	  
       <Files>
