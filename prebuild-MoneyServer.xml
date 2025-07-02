@@ -13,7 +13,8 @@
         </Options>
       </Configuration>
 
-      <ReferencePath>../../bin/</ReferencePath>
+      <ReferencePath>../../../bin/</ReferencePath>      
+      <Reference name="System"/>
       <Reference name="Mono.Security.dll"/>
       <Reference name="Nini"/>      
       <Reference name="log4net"/>
