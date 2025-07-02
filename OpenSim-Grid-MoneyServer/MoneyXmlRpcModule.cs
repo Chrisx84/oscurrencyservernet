@@ -116,6 +116,7 @@ using OpenSim.Modules.Currency;
 using OpenSim.Region.Framework.Scenes;
 using OpenSim.Services.Interfaces;
 using System.Collections;
+using System.Collections.Generic;
 using System.Net;
 using System.Reflection;
 using System.Security.Cryptography;
@@ -485,8 +486,8 @@ namespace OpenSim.Grid.MoneyServer
                 // Werte aus der XML-Struktur extrahieren
                 foreach (XmlNode member in members)
                 {
-                    string name = member.SelectSingleNode("name")?.InnerText;
-                    string value = member.SelectSingleNode("value")?.InnerText;
+                    string? name = member.SelectSingleNode("name")?.InnerText;
+                    string? value = member.SelectSingleNode("value")?.InnerText;
 
                     if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(value)) continue;
 
