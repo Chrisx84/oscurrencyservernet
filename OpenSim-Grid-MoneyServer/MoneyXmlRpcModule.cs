@@ -116,7 +116,6 @@ using OpenSim.Modules.Currency;
 using OpenSim.Region.Framework.Scenes;
 using OpenSim.Services.Interfaces;
 using System.Collections;
-using System.Collections.Generic;
 using System.Net;
 using System.Reflection;
 using System.Security.Cryptography;
@@ -222,9 +221,9 @@ namespace OpenSim.Grid.MoneyServer
         /// </value>
         //private string m_opensimVersion;
 
-        private Dictionary<string, string> m_sessionDic;
-        private Dictionary<string, string> m_secureSessionDic;
-        private Dictionary<string, string> m_webSessionDic;
+        private System.Collections.Generic.Dictionary<string, string> m_sessionDic;
+        private System.Collections.Generic.Dictionary<string, string> m_secureSessionDic;
+        private System.Collections.Generic.Dictionary<string, string> m_webSessionDic;
 
         protected BaseHttpServer m_httpServer;
 
@@ -1363,7 +1362,7 @@ namespace OpenSim.Grid.MoneyServer
             }
             return true;
         }
-        public new IEnumerable<TransactionData> GetTransactionHistory(string userID, int startTime, int endTime)
+        public new System.Collections.Generic.IEnumerable<TransactionData> GetTransactionHistory(string userID, int startTime, int endTime)
         {
             return GetTransactionHistory(userID, startTime, endTime);
         }
