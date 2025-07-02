@@ -2,26 +2,25 @@
     <Project name="OpenSim.Data.MySQL.MySQLMoneyDataWrapper" path="addon-modules/oscurrencyservernet/OpenSim-Data-MySQL-MySQLMoneyDataWrapper" type="Library">
       <Configuration name="Debug">
         <Options>
-          <OutputPath>../../../bin/</OutputPath>
+          <OutputPath>../../bin/</OutputPath>
           <AllowUnsafe>true</AllowUnsafe>
         </Options>
       </Configuration>
       <Configuration name="Release">
         <Options>
-          <OutputPath>../../../bin/</OutputPath>
+          <OutputPath>../../bin/</OutputPath>
           <AllowUnsafe>true</AllowUnsafe>
         </Options>
       </Configuration>
-	  
-      <ReferencePath>../../../bin/</ReferencePath>
-      <Reference name="Mono.Security.dll"/>
-      <Reference name="Nini"/>      
-      <Reference name="log4net"/>
-      <Reference name="XMLRPC"/>
-      <Reference name="MySql.Data"/>    
-      <Reference name="OpenMetaverseTypes"/>
-      <Reference name="OpenMetaverse"/>
-      <Reference name="OpenMetaverse.StructuredData"/>    
+    
+      <ReferencePath>../../bin/</ReferencePath>
+      <Reference name="Nini" path="../../bin/"/>
+      <Reference name="Mono.Addins" path="../../bin/"/>
+      <Reference name="log4net" path="../../bin/"/>
+      <Reference name="OpenMetaverse" path="../../bin/"/>
+      <Reference name="OpenMetaverseTypes" path="../../bin/"/>
+      <Reference name="XMLRPC" path="../../bin/"/>
+      <Reference name="MySql.Data" path="../../bin/"/>      
       <Reference name="OpenSim.Region.Framework"/>
       <Reference name="OpenSim.Framework"/>
       <Reference name="OpenSim.Framework.Console"/>
@@ -29,12 +28,8 @@
       <Reference name="OpenSim.Framework.Servers.HttpServer"/>
       <Reference name="OpenSim.Services.Interfaces"/>
       <Reference name="OpenSim.Server.Base"/>
-      <Reference name="OpenSim.Server.Handlers"/>
       <Reference name="OpenSim.Data"/>
-      <Reference name="OpenSim.Modules.Currency"/>
-      <Reference name="Mono.Addins" path ="../../../bin/"/>
-      <Reference name="Mono.Addins.Setup"/>
-	  
+    
       <Files>
         <Match pattern="*.cs" recurse="true">
           <Exclude name="obj" pattern="obj"/>
