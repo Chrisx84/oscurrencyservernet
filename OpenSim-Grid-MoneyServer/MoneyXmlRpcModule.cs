@@ -486,8 +486,8 @@ namespace OpenSim.Grid.MoneyServer
                 // Werte aus der XML-Struktur extrahieren
                 foreach (XmlNode member in members)
                 {
-                    string? name = member.SelectSingleNode("name")?.InnerText;
-                    string? value = member.SelectSingleNode("value")?.InnerText;
+                    string name = member.SelectSingleNode("name")?.InnerText;
+                    string value = member.SelectSingleNode("value")?.InnerText;
 
                     if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(value)) continue;
 
