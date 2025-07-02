@@ -2,13 +2,13 @@
     <Project name="OpenSim.Modules.Currency" path="addon-modules/oscurrencyservernet/OpenSim-Modules-Currency" type="Library">
       <Configuration name="Debug">
         <Options>
-          <OutputPath>../../../bin/</OutputPath>
+          <OutputPath>../../bin/</OutputPath>
           <AllowUnsafe>true</AllowUnsafe>
         </Options>
       </Configuration>
       <Configuration name="Release">
         <Options>
-          <OutputPath>../../../bin/</OutputPath>
+          <OutputPath>../../bin/</OutputPath>
           <AllowUnsafe>true</AllowUnsafe>
         </Options>
       </Configuration>
@@ -34,7 +34,7 @@
       <Reference name="OpenSim.Server.Base"/>
       <Reference name="OpenSim.Services.Interfaces"/>
 
-      <Reference name="XMLRPC" path="../../../bin/"/> 
+      <Reference name="XMLRPC"/> 
   
       <Files>
         <Match pattern="*.cs" recurse="true">
