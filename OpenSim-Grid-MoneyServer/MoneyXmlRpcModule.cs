@@ -186,7 +186,7 @@ namespace OpenSim.Grid.MoneyServer
         // SSL settings
         private string m_sslCommonName = "";
 
-        private System.Collections.Generic.Dictionary<ulong, Scene> m_scenes = new System.Collections.Generic.Dictionary<ulong, Scene>();
+        private Dictionary<ulong, Scene> m_scenes = new Dictionary<ulong, Scene>();
 
         private NSLCertificateVerify m_certVerify = new NSLCertificateVerify();
 
@@ -221,9 +221,9 @@ namespace OpenSim.Grid.MoneyServer
         /// </value>
         //private string m_opensimVersion;
 
-        private System.Collections.Generic.Dictionary<string, string> m_sessionDic;
-        private System.Collections.Generic.Dictionary<string, string> m_secureSessionDic;
-        private System.Collections.Generic.Dictionary<string, string> m_webSessionDic;
+        private Dictionary<string, string> m_sessionDic;
+        private Dictionary<string, string> m_secureSessionDic;
+        private Dictionary<string, string> m_webSessionDic;
 
         protected BaseHttpServer m_httpServer;
 
@@ -390,7 +390,7 @@ namespace OpenSim.Grid.MoneyServer
         {
         }
 
-        private System.Collections.Generic.Dictionary<string, XmlRpcMethod> m_rpcHandlers = new System.Collections.Generic.Dictionary<string, XmlRpcMethod>();
+        private Dictionary<string, XmlRpcMethod> m_rpcHandlers = new Dictionary<string, XmlRpcMethod>();
 
 
         /// <summary>Registers the handlers.</summary>
@@ -1362,7 +1362,7 @@ namespace OpenSim.Grid.MoneyServer
             }
             return true;
         }
-        public new System.Collections.Generic.IEnumerable<TransactionData> GetTransactionHistory(string userID, int startTime, int endTime)
+        public new IEnumerable<TransactionData> GetTransactionHistory(string userID, int startTime, int endTime)
         {
             return GetTransactionHistory(userID, startTime, endTime);
         }
@@ -1398,7 +1398,7 @@ namespace OpenSim.Grid.MoneyServer
             return Regex.IsMatch(email, pattern, RegexOptions.Compiled);
         }
 
-        private System.Collections.Generic.Dictionary<UUID, int> balances = new System.Collections.Generic.Dictionary<UUID, int>();
+        private Dictionary<UUID, int> balances = new Dictionary<UUID, int>();
 
         public int GetBalance(UUID uuid)
         {
