@@ -124,6 +124,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
 using MySql.Data.MySqlClient;
+using System.IO;
 using System.Collections.Generic;
 
 namespace OpenSim.Grid.MoneyServer
