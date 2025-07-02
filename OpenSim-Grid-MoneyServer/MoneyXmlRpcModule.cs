@@ -116,6 +116,7 @@ using OpenSim.Modules.Currency;
 using OpenSim.Region.Framework.Scenes;
 using OpenSim.Services.Interfaces;
 using System.Collections;
+using System;
 using System.Net;
 using System.Reflection;
 using System.Security.Cryptography;
