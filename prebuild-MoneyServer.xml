@@ -13,10 +13,9 @@
         </Options>
       </Configuration>
 
-      <ReferencePath>../../../bin/</ReferencePath>      
-      <Reference name="System"/>
+      <ReferencePath>../../../bin/</ReferencePath>
       <Reference name="Mono.Security.dll"/>
-      <Reference name="Nini"/>      
+      <Reference name="Nini"/>
       <Reference name="log4net"/>
       <Reference name="XMLRPC"/>
       <Reference name="MySql.Data"/>    
