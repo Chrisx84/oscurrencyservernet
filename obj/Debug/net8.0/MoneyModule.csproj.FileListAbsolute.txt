@@ -1,0 +1,6 @@
+D:\canadiangrid\addon-modules\oscurrencyservernet\obj\Debug\net8.0\MoneyModule.csproj.AssemblyReference.cache
+D:\canadiangrid\addon-modules\oscurrencyservernet\obj\Debug\net8.0\MoneyModule.GeneratedMSBuildEditorConfig.editorconfig
+D:\canadiangrid\addon-modules\oscurrencyservernet\obj\Debug\net8.0\MoneyModule.AssemblyInfoInputs.cache
+D:\canadiangrid\addon-modules\oscurrencyservernet\obj\Debug\net8.0\MoneyModule.AssemblyInfo.cs
+D:\canadiangrid\addon-modules\oscurrencyservernet\obj\Debug\net8.0\MoneyModule.csproj.CoreCompileInputs.cache
+D:\canadiangrid\addon-modules\oscurrencyservernet\obj\Debug\net8.0\MoneyModule.sourcelink.json
